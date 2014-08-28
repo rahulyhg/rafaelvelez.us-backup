@@ -1,0 +1,35 @@
+<?php
+
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+?>
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  <div ng-view></div>
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+
+  <script src="js/app.js"></script>
+
+  <script src="js/directives/loginDrc.js"></script>
+
+  <script src="js/controllers/loginCtrl.js"></script>
+  <script src="js/controllers/homeCtrl.js"></script>
+  
+  <script src="js/services/loginService.js"></script>
+  <script src="js/services/sessionService.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="ralimark">
+	<head>
+		<link rel="stylesheet"type="text/css"href="css/bootstrap.min.css" />
+	</head>
+	<body>
+		<script type="text/javascript"src="js/angular.min.js"></script><script type="text/javascript"src="app.js"></script>
+		<script type="text/javascript"src="js/app.js"></script><script type="text/javascript"src="app.js"></script>
+		<p>{{"Hello" + " World"}}</p>
+		<div ng-controller="RalimarkController as ralimark">
+			<h1>{{ralimark.product.name}}</h1>
+			<h1>{{ralimark.product.price}}</h1>
+			<p>{{ralimark.product.description}}</p>
+		</div>
+	</body>
+</html>

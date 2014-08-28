@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+<!--========================== BASIC ==========================-->
+	<meta charset="UTF-8">
+	<title>Profile Documentation</title></title>
+	<meta name="author" content="Velko Georgiev">
+		
+<!--========================== MOBILE SPECIFIC METAS ==========================-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		
+<!--========================== CSS ==========================-->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/layout.css">
+
+<!--========================== JAVASCRIPT ==========================-->
+	<script src="js/jquery.v1.10.2.js"></script>
+	<script src="js/prettify.js"></script>
+		
+		<body onload="prettyPrint()">
+			<div style="padding:3px 0px">
+					<asp:Label ID="lblTotalAns" runat="server" Text="0 Answers" CssClass="ansHeading" />
+			</div>
+		</body>
+	</head>
+ <body>
+		
+	<div class="container">
+	
+<!--========================== HEADER ==========================-->
+	<div class="header-desc">"Profile" Documentation by "Velko Georgiev" v1.0</div>
+		<header>
+			<h1>"Profile"</h1>
+				<div class="eight columns">
+					<p><strong>Created:</strong> 04/03/2014</p>
+					<p><strong>By:</strong> Velko Georgiev</p>
+					<p><strong>Email:</strong> v.georgiev81@gmail.com</p></div>
+				<div class="eight columns"><span>Thank You For Purchasing My Theme. If You Have Any Questions, Please Feel Free to Email Me. Thank You Very Much!</span></div>
+		</header>
+<!--========================== END HEADER ==========================-->
+
+			<div class="row"></div>
+	 
+<!--========================== TABLE OF CONTENTS ==========================-->
+	 <section id="table-contents">
+		<h2>Table of Contents</h2>
+
+				<ul>
+					<li><a href="#basic">A. Basic Settings</a></li>
+					<li><a href="#css-structure">B. CSS Structure</a></li>
+					<li><a href="#fonts">C. Fonts</a></li>
+					<li><a href="#slider">D. Slider</a></li>
+					<li><a href="#navigation">E. Navigation</a></li>
+					<li><a href="#about-me">F. About Me</a></li>
+					<li><a href="#skills">G. Skills Level</a></li>
+					<li><a href="#services">H. Services</a></li>
+					<li><a href="#portfolio">I. Portfolio</a></li>
+					<li><a href="#experience">J. Experience</a></li>
+					<li><a href="#education">K. Education</a></li>
+					<li><a href="#contact-form">L. Contact Form</a></li>
+					<li><a href="#social-icons">M. Social Icons</a></li>
+					<li><a href="#parallax">N. Parallax</a></li>
+					<li><a href="#javascript">O. Javascript</a></li>
+					<li><a href="#credits">P. Source & Credits</a></li>
+				</ul>
+	</section>
+<!--========================== END TABLE OF CONTENTS ==========================-->
+			
+<!--========================== A. BASIC ==========================-->
+	<section id="basic">
+	
+		<h2>A.) Basic Settings <a href="#table-contents">Top &uarr;</a></h2>
+		
+				Profile's Basic File Structure Looks Like The Code Below
+		
+			<pre class="prettyprint"> 
+			&lt;!--========================== BASIC ==========================--&gt;
+	&lt;meta charset=&quot;UTF-8&quot;&gt;
+	&lt;title&gt;Profile-Responsive Portfolio/Resume One Page Theme&lt;/title&gt;
+	&lt;meta name=&quot;description&quot; content=&quot;Your Website Description Here&quot;&gt;
+	&lt;meta name=&quot;keywords&quot; content=&quot;Your Keywords Here&quot;&gt;
+	&lt;meta name=&quot;author&quot; content=&quot;Your Author Name Here&quot;&gt;
+			</pre>
+			
+	</section>
+<!--========================== END BASIC ==========================-->
+
+		<div class="row"></div>
+
+<!--========================== B. CSS STRUCTURE ==========================-->
+	<section id="css-structure">
+		<h2>B.) CSS Files Structure <a href="#table-contents">Top &uarr;</a></h2>
+		
+			All Css Files are Located in .css Folder in The Download Folder
+			
+			<pre class="prettyprint"> 
+			&lt;!--========================== CSS ==========================--&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/skeleton.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/base.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/layout.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/font-awesome.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/flexslider.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/lightbox.css&quot;&gt;
+	&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jpreloader.css&quot;&gt;
+			</pre>	
+	</section>	
+<!--========================== END CSS STRUCTURE ==========================-->
+
+		<div class="row"></div>
+	
+<!--========================== C. FONTS ==========================-->
+	<section id="fonts">
+		
+		<h2>C.) Fonts Use <a href="#table-contents">Top &uarr;</a></h2>		
+		
+			<p>Profile’s fonts:</p>
+				<ul>
+					<li><a href='http://www.fontsquirrel.com/fonts/bebas-neue'>BebasNeueRegular</a></li>
+					<li><a href='http://fortawesome.github.io/Font-Awesome/'>Font Awesome</a></li>
+					<li><a href='https://www.google.com/fonts'>Google Fonts Oswald</a></li>
+					<li><a href='https://www.google.com/fonts'>Google Fonts Raleway</a></li>
+				</ul>
+
+		<pre class="prettyprint">
+			&lt;!--========================== GOOGLE FONTS ==========================--&gt;
+	&lt;link href='http://fonts.googleapis.com/css?family=Raleway:100,300' rel='stylesheet' type='text/css'&gt;
+	&lt;link href='http://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'&gt;
+		</pre>
+
+		<strong>You Can Also Change Font Family in style.css File Located Inside Download Folder</strong>
+		
+		<pre class="prettyprint">
+			font-family: "Oswald", sans-serif;
+			font-family: 'Raleway', sans-serif;
+		</pre>
+	</section>
+<!--========================== END FONTS ==========================-->
+
+		<div class="row"></div>
+		
+<!--========================== D. SLIDER ==========================-->
+	<section id="slider">		
+	
+		<h2>D.) Slider <a href="#table-contents">Top &uarr;</a></h2>
+		
+			Profile's Flex Slider Structure Looks Like The Code Below
+			
+		<pre class="prettyprint">		
+	&lt;!--========================== SLIDER ==========================--&gt;
+	&lt;section id=&quot;slider&quot; class=&quot;slider flexslider&quot;&gt; 
+
+	&lt;!-- Start Slides --&gt;
+		&lt;ul class=&quot;slides&quot;&gt;
+				
+			&lt;!-- Start Slide 1 --&gt;
+				&lt;li&gt;
+					&lt;div class=&quot;heading&quot;&gt;
+						&lt;div class=&quot;hexagon-top&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;hexagon&quot;&gt;
+								&lt;h2&gt;Welcome To&lt;/h2&gt;
+								&lt;h1&gt;&lt;span&gt;My&lt;/span&gt; Website&lt;/h1&gt;
+							&lt;/div&gt;
+						&lt;div class=&quot;hexagon-bottom&quot;&gt;&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;&lt;!-- End Slide 1 --&gt;
+					
+			&lt;!-- Start Slide 2 --&gt;
+				&lt;li&gt;
+					&lt;div class=&quot;heading&quot;&gt;
+						&lt;div class=&quot;hexagon-top&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;hexagon&quot;&gt;
+								&lt;h2&gt;My Name Is&lt;/h2&gt;
+								&lt;h1&gt;&lt;span&gt;John&lt;/span&gt; Dow&lt;/h1&gt;
+							&lt;/div&gt;
+						&lt;div class=&quot;hexagon-bottom&quot;&gt;&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;&lt;!-- End Slide 2 --&gt;
+					
+			&lt;!-- Start Slide 3 --&gt;
+				&lt;li&gt;
+					&lt;div class=&quot;heading&quot;&gt;
+						&lt;div class=&quot;hexagon-top&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;hexagon&quot;&gt;
+								&lt;h2&gt;I am a freelance&lt;/h2&gt;
+								&lt;h1&gt;&lt;span&gt;Web&lt;/span&gt;designer&lt;/h1&gt;
+							&lt;/div&gt;
+						&lt;div class=&quot;hexagon-bottom&quot;&gt;&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/li&gt;&lt;!-- End Slide 3 --&gt;
+		&lt;/ul&gt;&lt;!-- End Slides --&gt;
+	&lt;/section&gt; 
+&lt;!--========================== END SLIDER ==========================--&gt;
+		</pre>		
+				
+		<strong>To Change Flex Slider Title Tags Replace h1 & h2 Title Tags With Yours.</strong>
+		
+	</section>
+<!--========================== END SLIDER ==========================-->
+	
+		<div class="row"></div>
+		
+<!--========================== E. NAVIGATION ==========================-->
+	<section id="navigation">
+		<h2>E.) Navigation <a href="#table-contents">Top &uarr;</a></h2>
+
+			Profile's Navigation Menu is Built With an Unordered List (ul) and Each Element of the Navigation is a List Item (li). 
+			Here is The Navigation Structure:
+		
+		<pre class="prettyprint"> 
+&lt;!-- Navigation --&gt;
+		&lt;ul class=&quot;navigation&quot;&gt;
+			&lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;home-icon fa fa-bars fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#about-me&quot; class=&quot;tooltip&quot; title=&quot;About Me&quot;&gt;&lt;i class=&quot;menu-icon fa fa-thumb-tack fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#skills&quot; class=&quot;tooltip&quot; title=&quot;Skills&quot;&gt;&lt;i class=&quot;menu-icon fa fa-cogs fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#services&quot; class=&quot;tooltip&quot; title=&quot;Services&quot;&gt;&lt;i class=&quot;menu-icon fa fa-html5 fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#portfolio&quot; class=&quot;tooltip&quot; title=&quot;Portfolio&quot;&gt;&lt;i class=&quot;menu-icon fa fa-camera fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#experience&quot; class=&quot;tooltip&quot; title=&quot;Experience&quot;&gt;&lt;i class=&quot;menu-icon fa fa-briefcase fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#education&quot; class=&quot;tooltip&quot; title=&quot;Education&quot;&gt;&lt;i class=&quot;menu-icon fa fa-laptop fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#blog&quot; class=&quot;tooltip&quot; title=&quot;Blog&quot;&gt;&lt;i class=&quot;menu-icon fa fa-coffee fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href=&quot;#contact&quot; class=&quot;tooltip&quot; title=&quot;Contact&quot;&gt;&lt;i class=&quot;menu-icon fa fa-envelope-o fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;&lt;!-- End Navigation --&gt;
+		</pre>	
+	</section>
+<!--========================== END NAVIGATION ==========================-->			   
+		
+		<div class="row"></div>
+		
+<!--========================== F. ABOUT ME ==========================-->
+	<section id="about-me">
+		<h2>F.) About Me <a href="#table-contents">Top &uarr;</a></h2>
+		Profile's About Me Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--========================== ABOUT ME ==========================--&gt;		
+	&lt;section id=&quot;about-me&quot;&gt;	
+		&lt;h2&gt;About Me&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-thumb-tack fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		
+		&lt;img src=&quot;img/profile.jpg&quot; alt=&quot;image&quot;&gt;
+			&lt;h3&gt;John Dow&lt;/h3&gt;
+				&lt;h4&gt;Web Designer, Wordpress Developer&lt;/h4&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas semper est, ut aliquet ante elementum in. 
+					   Nulla sem lectus, porttitor vitae nisl ac, interdum vehicula justo. Pellentesque sed interdum lacus. 
+					   Nulla quis lacinia mauris, et suscipit dui. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+					   Suspendisse eget rutrum felis. Nunc ac ullamcorper eros, sit amet consequat tellus. Aliquam dapibus mollis quam eu tristique.
+					&lt;/p&gt;
+	&lt;/section&gt;
+&lt;!--========================== END ABOUT ME ==========================--&gt;
+		</pre>	
+	</section>	
+<!--========================== END ABOUT ME ==========================-->
+	
+		<div class="row"></div>
+		
+<!--========================== G. SKILLS LEVEL ==========================-->
+	<section id="skills">
+		<h2>G.) Skills Level <a href="#table-contents">Top &uarr;</a></h2>
+		Profile's Skills Level Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--========================== SKILLS LEVEL ==========================--&gt;	
+	&lt;section id=&quot;skills&quot;&gt;
+		&lt;h2&gt;Skills Level&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-cogs fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+
+		&lt;div class=&quot;eight columns&quot;&gt;
+			&lt;!-- Skill 1 --&gt;
+				&lt;div class=&quot;skillbar clearfix&quot; data-percent=&quot;90%&quot;&gt;
+					&lt;div class=&quot;skillbar-title&quot;&gt;Graphic Design&lt;/div&gt;
+						&lt;div class=&quot;skillbar-bar&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;skill-bar-percent&quot;&gt;90%&lt;/div&gt;
+				&lt;/div&gt;&lt;!-- End Skill 1 --&gt;
+	
+			&lt;!-- Skill 2 --&gt;
+				&lt;div class=&quot;skillbar clearfix &quot; data-percent=&quot;85%&quot;&gt;
+					&lt;div class=&quot;skillbar-title&quot;&gt;Photoshop&lt;/div&gt;
+						&lt;div class=&quot;skillbar-bar&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;skill-bar-percent&quot;&gt;85%&lt;/div&gt;
+				&lt;/div&gt;&lt;!-- End Skill 2 --&gt;
+	
+			&lt;!-- Skill 3 --&gt;
+				&lt;div class=&quot;skillbar clearfix &quot; data-percent=&quot;77%&quot;&gt;
+					&lt;div class=&quot;skillbar-title&quot;&gt;Illustrator&lt;/div&gt;
+						&lt;div class=&quot;skillbar-bar&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;skill-bar-percent&quot;&gt;77%&lt;/div&gt;
+				&lt;/div&gt;&lt;!-- End Skill 3 --&gt;
+		&lt;/div&gt;
+	
+		&lt;div class=&quot;eight columns&quot;&gt;
+			&lt;!-- Skill 4 --&gt;
+				&lt;div class=&quot;skillbar clearfix &quot; data-percent=&quot;87%&quot;&gt;
+					&lt;div class=&quot;skillbar-title&quot;&gt;HTML5 / CSS3&lt;/div&gt;
+						&lt;div class=&quot;skillbar-bar&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;skill-bar-percent&quot;&gt;87%&lt;/div&gt;
+				&lt;/div&gt;&lt;!-- End Skill 4 --&gt;
+	
+			&lt;!-- Skill 5 --&gt;
+				&lt;div class=&quot;skillbar clearfix &quot; data-percent=&quot;75%&quot;&gt;
+					&lt;div class=&quot;skillbar-title&quot;&gt;Jquery&lt;/div&gt;
+						&lt;div class=&quot;skillbar-bar&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;skill-bar-percent&quot;&gt;75%&lt;/div&gt;
+				&lt;/div&gt;&lt;!-- End Skill 5 --&gt;
+	
+			&lt;!-- Skill 6 --&gt;
+				&lt;div class=&quot;skillbar clearfix &quot; data-percent=&quot;68%&quot;&gt;
+					&lt;div class=&quot;skillbar-title&quot;&gt;PHP / MySQL&lt;/div&gt;
+						&lt;div class=&quot;skillbar-bar&quot;&gt;&lt;/div&gt;
+							&lt;div class=&quot;skill-bar-percent&quot;&gt;68%&lt;/div&gt;
+				&lt;/div&gt;&lt;!-- End Skill 6 --&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+&lt;!--========================== END SKILLS LEVEL ==========================--&gt;
+		</pre>	
+		
+		<strong>To Change Skillbar Percent Change The Value:</strong>
+		
+		
+		<pre class="prettyprint">
+		&lt;div class=&quot;skillbar clearfix &quot; data-percent=&quot;68%&quot;&gt;
+		&lt;div class=&quot;skill-bar-percent&quot;&gt;68%&lt;/div&gt;
+		</pre>	
+		
+	</section>	
+<!--========================== END SKILLS LEVEL ==========================-->
+	
+		<div class="row"></div>	
+		
+<!--========================== H. SERVICES ==========================-->
+	<section id="services">
+		<h2>H.) Services <a href="#table-contents">Top &uarr;</a></h2>
+		Profile's Services Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--========================== SERVICES ==========================--&gt;	
+	&lt;section id=&quot;services&quot;&gt;
+		&lt;h2&gt;My Services&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-html5 fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			
+	&lt;!-- Service 1 --&gt;
+		&lt;div class=&quot;service eight columns&quot;&gt;
+			&lt;i class=&quot;service-icon fa fa-laptop fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Graphic Design&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec adipiscing est. 
+					   Praesent id vulputate lacus, vel molestie ante.&lt;/p&gt;
+		&lt;/div&gt;&lt;!-- End Service 1 --&gt;
+	
+	&lt;!-- Service 2 --&gt;
+		&lt;div class=&quot;service eight columns&quot;&gt;
+			&lt;i class=&quot;service-icon fa fa-cog fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Wordpress Development&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec adipiscing est. 
+					   Praesent id vulputate lacus, vel molestie ante.&lt;/p&gt;
+		&lt;/div&gt;&lt;!-- End Service 2 --&gt;
+		
+	&lt;!-- Service 3 --&gt;
+		&lt;div class=&quot;service eight columns&quot;&gt;
+			&lt;i class=&quot;service-icon fa fa-pencil fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Copywriting&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec adipiscing est. 
+					   Praesent id vulputate lacus, vel molestie ante.&lt;/p&gt;
+		&lt;/div&gt;&lt;!-- End Service 3 --&gt;
+		
+	&lt;!-- Service 4 --&gt;
+		&lt;div class=&quot;service eight columns&quot;&gt;
+			&lt;i class=&quot;service-icon fa fa-twitter fa-4x&quot;&gt;&lt;/i&gt;
+				&lt;h3&gt;Social marketing&lt;/h3&gt;
+					&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec adipiscing est. 
+					   Praesent id vulputate lacus, vel molestie ante.&lt;/p&gt;
+		&lt;/div&gt;&lt;!-- End Service 4 --&gt;
+	&lt;/section&gt;
+&lt;!--========================== END SERVICES ==========================--&gt;
+	
+		</pre>
+		
+	</section>	
+<!--========================== END SERVICES ==========================-->	
+	
+		<div class="row"></div>	
+	
+<!--========================== I. PORTFOLIO ==========================-->
+	<section id="portfolio">
+		<h2>I.) Portfolio <a href="#table-contents">Top &uarr;</a></h2>
+		
+		Profile's Portfolio Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--========================== PORTFOLIO ==========================--&gt;
+	&lt;section id=&quot;portfolio&quot;&gt;
+		&lt;h2&gt;Portfolio&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-camera fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		
+	&lt;!-- Filter Menu --&gt;
+		&lt;div class=&quot;portfolioFilter&quot;&gt;
+			&lt;a class=&quot;filter&quot; data-filter=&quot;webdesign&quot;&gt;Webdesign&lt;/a&gt;
+			&lt;a class=&quot;filter&quot; data-filter=&quot;photography&quot;&gt;Photography&lt;/a&gt;
+			&lt;a class=&quot;filter&quot; data-filter=&quot;all&quot;&gt;All&lt;/a&gt;
+			&lt;a class=&quot;filter&quot; data-filter=&quot;branding&quot;&gt;Branding&lt;/a&gt;				
+			&lt;a class=&quot;filter&quot; data-filter=&quot;development&quot;&gt;Development&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;!-- Filter Menu --&gt;
+
+	&lt;!-- Portfolio Images --&gt;
+		&lt;ul id=&quot;Grid&quot; class=&quot;portfolioContainer&quot;&gt;
+				
+		&lt;!-- Project 1 --&gt;
+			&lt;li class=&quot;mix webdesign&quot; data-cat=&quot;webdesign&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Webdesign&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-1&quot; title=&quot;Project Title 1&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 1 --&gt;
+					
+		&lt;!-- Project 2 --&gt;
+			&lt;li class=&quot;mix webdesign&quot; data-cat=&quot;webdesign&quot;&gt;	
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Webdesign&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-2&quot; title=&quot;Project Title 2&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 2 --&gt;
+			
+		&lt;!-- Project 3 --&gt;
+			&lt;li class=&quot;mix webdesign&quot; data-cat=&quot;webdesign&quot;&gt;	
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Webdesign&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-3&quot; title=&quot;Project Title 3&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 3 --&gt;
+			
+		&lt;!-- Project 4 --&gt;
+			&lt;li class=&quot;mix photography&quot; data-cat=&quot;photography&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Photography&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-4&quot; title=&quot;Project Title 4&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 4 --&gt;
+			
+		&lt;!-- Project 5 --&gt;
+			&lt;li class=&quot;mix photography&quot; data-cat=&quot;photography&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Photography&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-5&quot; title=&quot;Project Title 5&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 5 --&gt;
+			
+		&lt;!-- Project 6 --&gt;
+			&lt;li class=&quot;mix photography&quot; data-cat=&quot;photography&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Photography&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-6&quot; title=&quot;Project Title 6&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 6 --&gt;
+			
+		&lt;!-- Project 7 --&gt;
+			&lt;li class=&quot;mix branding&quot; data-cat=&quot;branding&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Branding&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-7&quot; title=&quot;Project Title 7&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 7 --&gt;
+			
+		&lt;!-- Project 8 --&gt;
+			&lt;li class=&quot;mix branding&quot; data-cat=&quot;branding&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Branding&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-8&quot; title=&quot;Project Title 8&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 8 --&gt;
+			
+		&lt;!-- Project 9 --&gt;
+			&lt;li class=&quot;mix branding&quot; data-cat=&quot;branding&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Branding&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-9&quot; title=&quot;Project Title 9&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 9 --&gt;
+			
+		&lt;!-- Project 10 --&gt;
+			&lt;li class=&quot;mix development&quot; data-cat=&quot;development&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Development&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-10&quot; title=&quot;Project Title 10&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 10 --&gt;
+			
+		&lt;!-- Project 11 --&gt;
+			&lt;li class=&quot;mix development&quot; data-cat=&quot;development&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Development&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-11&quot; title=&quot;Project Title 11&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 11 --&gt;
+			
+		&lt;!-- Project 12 --&gt;
+			&lt;li class=&quot;mix development&quot; data-cat=&quot;development&quot;&gt;
+				&lt;div class=&quot;project project-view&quot;&gt;
+					&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+						&lt;div class=&quot;project-mask&quot;&gt;
+							&lt;h3&gt;Project Title&lt;/h3&gt;
+								&lt;h4&gt;Development&lt;/h4&gt;
+									&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-12&quot; title=&quot;Project Title 12&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/li&gt;&lt;!-- End Project 12 --&gt;
+		&lt;/ul&gt;&lt;!-- End Portfolio Images --&gt;
+	&lt;/section&gt;
+&lt;!--========================== END PORTFOLIO ==========================--&gt;
+	
+		</pre>
+		
+	<strong>To Change Placeholder Images With Yours Replace "project.png" With Your Images</strong>
+	
+	<pre class="prettyprint">
+	&lt;img src=&quot;img/projects/project.png&quot; alt=&quot;image&quot;&gt;
+	&lt;a href=&quot;img/projects/project.png&quot; data-lightbox=&quot;image-12&quot; title=&quot;Project Title 1&quot;&gt;&lt;i class=&quot;fa fa-link fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+	</pre>
+	</section>		
+		
+	</section>	
+<!--========================== END PORTFOLIO ==========================-->	
+	
+		<div class="row"></div>
+	
+<!--========================== J. EXPERIENCE ==========================-->		
+	<section id="experience">
+			<h2>J.) Experience <a href="#table-contents">Top &uarr;</a></h2>
+		Profile's Experience Structure Looks Like the Code Below
+		<pre class="prettyprint"> 
+&lt;!--========================== EXPERIENCE ==========================--&gt;	
+	&lt;section id=&quot;experience&quot; class=&quot;experience&quot;&gt;
+		&lt;h2&gt;Experience&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-briefcase fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		
+			&lt;ul class=&quot;cbp_tmtimeline&quot;&gt;
+				&lt;!-- Experience 1 --&gt;
+					&lt;li&gt;
+						&lt;div class=&quot;cbp_tmtime&quot;&gt;&lt;span&gt;Jan, 2014&lt;/span&gt;&lt;/div&gt;
+							&lt;i class=&quot;cbp_tmicon fa fa-briefcase fa-2x&quot;&gt;&lt;/i&gt;
+								&lt;div class=&quot;cbp_tmlabel&quot;&gt;
+									&lt;h3&gt;ACME Enterprises, Inc.&lt;/h3&gt;
+									&lt;h4&gt;Web Developer&lt;/h4&gt;
+									&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies sed ligula ut ultricies. 
+									   Integer sagittis pretium dolor eu molestie. Aliquam nec vehicula est. Praesent.&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Experience 1 --&gt;
+				
+				&lt;!-- Experience 2 --&gt;
+					&lt;li&gt;
+						&lt;div class=&quot;cbp_tmtime&quot;&gt;&lt;span&gt;Mart, 2012&lt;/span&gt;&lt;/div&gt;
+							&lt;i class=&quot;cbp_tmicon fa fa-briefcase fa-2x&quot;&gt;&lt;/i&gt;
+								&lt;div class=&quot;cbp_tmlabel&quot;&gt;
+									&lt;h3&gt;Creative Media LTD.&lt;/h3&gt;
+									&lt;h4&gt;Web &amp; Graphic Designer&lt;/h4&gt;
+									&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies sed ligula ut ultricies. 
+							           Integer sagittis pretium dolor eu molestie. Aliquam nec vehicula est. Praesent.&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Experience 2 --&gt;
+				
+				&lt;!-- Experience 3 --&gt;
+					&lt;li&gt;
+						&lt;div class=&quot;cbp_tmtime&quot;&gt;&lt;span&gt;May, 2011&lt;/span&gt;&lt;/div&gt;
+							&lt;i class=&quot;cbp_tmicon fa fa-briefcase fa-2x&quot;&gt;&lt;/i&gt;
+								&lt;div class=&quot;cbp_tmlabel&quot;&gt;
+									&lt;h3&gt;Freelance&lt;/h3&gt;
+									&lt;h4&gt;Freelance Web Developer&lt;/h4&gt;
+									&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies sed ligula ut ultricies. 
+								       Integer sagittis pretium dolor eu molestie. Aliquam nec vehicula est. Praesent.&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Experience 3 --&gt;
+			&lt;/ul&gt;
+	&lt;/section&gt;
+&lt;!--========================== END EXPERIENCE ==========================--&gt;	
+		
+		</pre>	
+		
+	</section>	
+<!--========================== END EXPERIENCE ==========================-->	
+		
+		<div class="row"></div>	
+	
+<!--========================== K. EDUCATION ==========================-->		
+	
+	<section id="education">
+		<h2>K.) Education <a href="#table-contents">Top &uarr;</a></h2>
+			Profile's Education Structure Looks Like the Code Below
+		<pre class="prettyprint">		
+&lt;!--========================== EDUCATION ==========================--&gt;	
+	&lt;section id=&quot;education&quot; class=&quot;education&quot;&gt;
+		&lt;h2&gt;Education&lt;/h2&gt;
+			&lt;div class=&quot;title&quot;&gt;
+				&lt;div class=&quot;title-icon&quot;&gt;
+					&lt;i class=&quot;fa fa-laptop fa-2x&quot;&gt;&lt;/i&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		
+			&lt;ul class=&quot;cbp_tmtimeline&quot;&gt;
+			
+				&lt;!-- Education 1 --&gt;
+					&lt;li&gt;
+						&lt;div class=&quot;cbp_tmtime&quot;&gt;&lt;span&gt;Dec, 2010&lt;/span&gt;&lt;/div&gt;
+							&lt;i class=&quot;cbp_tmicon fa fa-laptop fa-2x&quot;&gt;&lt;/i&gt;
+								&lt;div class=&quot;cbp_tmlabel&quot;&gt;
+									&lt;h3&gt;College&lt;/h3&gt;
+									&lt;h4&gt;Harvard University&lt;/h4&gt;
+									&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies sed ligula ut ultricies. 
+								       Integer sagittis pretium dolor eu molestie. Aliquam nec vehicula est. Praesent.&lt;/p&gt;
+						&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Education 1 --&gt;
+					
+				&lt;!-- Education 2 --&gt;
+					&lt;li&gt;
+						&lt;div class=&quot;cbp_tmtime&quot;&gt;&lt;span&gt;May, 2008&lt;/span&gt;&lt;/div&gt;
+							&lt;i class=&quot;cbp_tmicon fa fa-laptop fa-2x&quot;&gt;&lt;/i&gt;
+								&lt;div class=&quot;cbp_tmlabel&quot;&gt;
+									&lt;h3&gt;Graphic &amp; Web Designer&lt;/h3&gt;
+									&lt;h4&gt;Webdesign University&lt;/h4&gt;
+									&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies sed ligula ut ultricies. 
+									   Integer sagittis pretium dolor eu molestie. Aliquam nec vehicula est. Praesent.&lt;/p&gt;
+							&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Education 2 --&gt;
+				
+				&lt;!-- Education 3 --&gt;
+					&lt;li&gt;
+						&lt;div class=&quot;cbp_tmtime&quot;&gt;&lt;span&gt;Feb, 2006&lt;/span&gt;&lt;/div&gt;
+							&lt;i class=&quot;cbp_tmicon fa fa-laptop fa-2x&quot;&gt;&lt;/i&gt;
+								&lt;div class=&quot;cbp_tmlabel&quot;&gt;
+									&lt;h3&gt;Schooling&lt;/h3&gt;
+									&lt;h4&gt;High School&lt;/h4&gt;
+									&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies sed ligula ut ultricies. 
+								       Integer sagittis pretium dolor eu molestie. Aliquam nec vehicula est. Praesent.&lt;/p&gt;
+							&lt;/div&gt;
+					&lt;/li&gt;&lt;!-- End Education 3 --&gt;
+			&lt;/ul&gt;
+	&lt;/section&gt;
+&lt;!--========================== END EDUCATION ==========================--&gt;	
+	
+		</pre>		
+	</section>
+<!--========================== END EDUCATION ==========================-->	
+	
+		<div class="row"></div>
+	
+<!--========================== L. CONTACT FORM ==========================-->	
+	<section id="contact-form">
+		<h2>L.) Contact Form <a href="#table-contents">Top &uarr;</a></h2>
+		Profile's Contact Form Structure Looks Like Below Code
+		
+		<pre class="prettyprint">
+&lt;!-- Contact Form --&gt;
+					&lt;form method=&quot;post&quot; action=&quot;contact.php&quot;&gt;
+						&lt;div class=&quot;eight columns&quot;&gt;
+							&lt;input type=&quot;text&quot; class=&quot;name&quot; placeholder=&quot;Name&quot; required=&quot;required&quot; name=&quot;Name&quot;&gt;
+							&lt;input type=&quot;email&quot; class=&quot;email&quot; placeholder=&quot;Email&quot; required=&quot;required&quot; name=&quot;Email&quot;&gt;
+							&lt;input type=&quot;text&quot; class=&quot;subject&quot; placeholder=&quot;Subject&quot; required=&quot;required&quot; name=&quot;Subject&quot;&gt;
+						&lt;/div&gt;
+				
+						&lt;div class=&quot;eight columns&quot;&gt;
+							&lt;textarea name=&quot;Message&quot; required rows=&quot;20&quot; cols=&quot;20&quot; class=&quot;message&quot; placeholder=&quot;Message&quot;&gt;&lt;/textarea&gt;
+						&lt;/div&gt;
+
+						&lt;div class=&quot;sixteen columns &quot;&gt;
+							&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Send&quot; class=&quot;submit-button&quot; /&gt;
+						&lt;/div&gt;
+					&lt;/form&gt;&lt;!-- End Contact Form --&gt;
+		</pre>
+				
+				<strong>To Change Admin Email and Site Name Go To contact.php File Located in Download Folder</strong>
+				
+			<pre class="prettyprint"> 
+			$EmailFrom = &quot;Your Site Name&quot;;
+			$EmailTo = &quot;Your Email Address&quot;;
+			</pre>		
+	</section>	
+<!--========================== END CONTACT FORM ==========================-->		
+	
+		<div class="row"></div>
+	
+<!--========================== M. SOCIAL ICONS ==========================-->	
+	<section id="social-icons">
+		<h2>M.) Social Icons <a href="#table-contents">Top &uarr;</a></h2>
+		Profile's Social Icons Structure Looks Like The Code Below
+		<pre class="prettyprint"> 
+			
+			&lt;!-- Social Icons --&gt;	
+					&lt;div class=&quot;social-icons&quot;&gt;
+						&lt;a href=&quot;#&quot; class=&quot;tooltip&quot; title=&quot;Facebook&quot;&gt;&lt;i class=&quot;social-icon fa fa-facebook fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;a href=&quot;#&quot; class=&quot;tooltip&quot; title=&quot;Twitter&quot;&gt;&lt;i class=&quot;social-icon fa fa-twitter fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;a href=&quot;#&quot; class=&quot;tooltip&quot; title=&quot;Google&quot;&gt;&lt;i class=&quot;social-icon fa fa-google-plus fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;a href=&quot;#&quot; class=&quot;tooltip&quot; title=&quot;Pinterest&quot;&gt;&lt;i class=&quot;social-icon fa fa-pinterest fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;a href=&quot;#&quot; class=&quot;tooltip&quot; title=&quot;Linkedin&quot;&gt;&lt;i class=&quot;social-icon fa fa-linkedin fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;a href=&quot;#&quot; class=&quot;tooltip&quot; title=&quot;Skype&quot;&gt;&lt;i class=&quot;social-icon fa fa-skype fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+						&lt;a href=&quot;#&quot; class=&quot;tooltip&quot; title=&quot;RSS&quot;&gt;&lt;i class=&quot;social-icon fa fa-rss fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+					&lt;/div&gt;&lt;!-- End Social Icons --&gt;
+			
+			</pre>	
+		
+		<strong>To Change Social Link With Yours Replace "#" With Your Custom Link.</strong>
+	</section>	
+<!--========================== END SOCIAL ICONS ==========================-->
+	
+			<div class="row"></div>
+	
+<!--========================== N. PARALLAX ==========================-->		
+	<section id="parallax">			
+		<h2>N.) Parallax <a href="#table-contents">Top &uarr;</a> </h2>
+		Profile's Parallax Structure Looks Like the Code Below (located in style.css)
+		<pre class="prettyprint"> 
+
+		#slide1{ 
+		background-image: url(../img/slide.png);
+		background-repeat: no-repeat;
+		background-attachment: fixed;		
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		box-shadow: inset 0px 50px 50px rgba(0,0,0,0.3);
+		}
+
+		</pre>	
+		
+		<strong>To Change Placeholder Parallax Images With Yours Replace "slide.png" With Your Images</strong>
+		
+	<pre class="prettyprint">
+		background-image: url(../img/slide.png);
+	</pre>
+		
+	</section>	
+<!--========================== END PARALLAX ==========================-->	
+
+		<div class="row"></div>	
+					
+<!--========================== O. JAVASCRIPT ==========================-->			
+	<section id="javascript">
+		<h2>O.) Javascript <a href="#table-contents">Top &uarr;</a></h2>
+		<p>This Theme Imports Fifteen Javascript files</p>
+		
+		<ul>
+		<li><strong>Html5shiv.js</strong> - This Script is the Defacto Way to Enable Use of HTML5 Sectioning Elements in Legacy Internet Explorer.</li>
+		<li><strong>Jquery.easing.1.3.js</strong> - A jQuery Plugin From GSGD to Give Advanced Easing Options.</li>
+		<li><strong>jQuery.circleMenu.js</strong> - A Circular Menu jQuery Plugin.</li>
+		<li><strong>Prettify.js</strong> - A Javascript module and CSS file that allows syntax highlighting of source code snippets in an html page.</li>
+		<li><strong>Jquery.flexslider.js</strong> - An Awesome, Fully Responsive jQuery Slider Plugin</li>
+		<li><strong>Jquery.mixitup.min.js</strong> - jQuery Plugin For Filtering and Sorting Html Elements</li>
+		<li><strong>Lightbox-2.6.min</strong> - Lightbox is Small Javascript Library Used to Overlay Images on Top of The Current Page.</li>
+		<li><strong>Jquery.v1.10.2.js</strong> - Jquery Library</li>
+		<li><strong>Jquery.validate.js</strong> - This jQuery Plugin Makes Simple Clientside Form Validation Trivial, While Offering Lots of Option for Customization.</li>
+		<li><strong>Modernizr.custom.js</strong> - Modernizr is a Small JavaScript library That Detects the Availability of Native Implementations for Next-generation Web Technologies, i.e. Features That Stem From the HTML5 and CSS3 Specifications. </li>
+		<li><strong>Plugins.js</strong> - Custom Settings </li>
+		<li><strong>Respond.min.js</strong> - A Fast & Lightweight Polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)</li>
+		<li><strong>Waypoints.min.js</strong> - Waypoints is a jQuery Plugin That Makes it Easy to Execute a Function Whenever You Scroll to an Element.</li>
+		<li><strong>Jpreloader.js</strong> - jPreLoader is a jQuery Plugin to Create Preloading Screen to Preload All The Images in Website and Attached With Customizable Splash Screen </li>
+		<li><strong>Jquery.stellar.js</strong> - jQuery Plugin That Provides Parallax Scrolling Effects to Any Scrolling Element. </li>
+		<li><strong>Jquery.tooltipster.js</strong> - Tooltip Plugin </li>
+		
+		</ul>
+	</section>
+<!--========================== END JAVASCRIPT ==========================-->	
+
+		<div class="row"></div>
+	
+<!--========================== P. SOURCE & CREDITS ==========================-->	
+	<section id="credits">
+		<h2>P.) Sources & Credits <a href="#table-contents">Top &uarr;</a></h2>
+		
+		<p>These Are The Plugins, Images and other Components That Were Used to Make This Theme:</p>
+		
+		<ul>
+		<li>Skeleton.css - <a href='http://www.getskeleton.com/'>http://www.getskeleton.com/</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		
+		<li>Photos by Thomas Leuthard - <a href='http://www.flickr.com/photos/thomasleuthard/'>http://www.flickr.com/photos/thomasleuthard/</a> | <a href='http://creativecommons.org/licenses/by/2.0/'>(Creative Commons License)</a></li>
+		<li>Photos by Robert S. Donovan - <a href='http://www.flickr.com/photos/booleansplit/'>http://www.flickr.com/photos/booleansplit/</a> | <a href='http://creativecommons.org/licenses/by/2.0/'>(Creative Commons License)</a></li>
+		
+		<li>Jquery Waypoints - <a href='https://github.com/imakewebthings/jquery-waypoints'>https://github.com/imakewebthings/jquery-waypoints</a> | <a href='https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt'>(MIT License)</a></li>
+		<li>Respond.js - <a href='https://github.com/scottjehl/Respond'>https://github.com/scottjehl/Respond</a> | <a href='https://github.com/scottjehl/Respond/commit/0ce59f0847d7f9a243db6a81616fcf9e21f3724f'>(MIT License)</a></li>
+		<li>Modernizr - <a href='http://modernizr.com/'>http://modernizr.com/</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>Mixitup - <a href='http://mixitup.io/'>http://mixitup.io/</a> | <a href='http://creativecommons.org/licenses/by-nd/3.0/'>(Creative Commons License)</a></li>
+		<li>Flexslider - <a href='https://github.com/woothemes/flexslider'>https://github.com/woothemes/flexslider</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>Easing - <a href='http://gsgd.co.uk/sandbox/jquery/easing/'>http://gsgd.co.uk/sandbox/jquery/easing/</a></li>
+		<li>Jquery.validate - <a href='http://bassistance.de/jquery-plugins/jquery-plugin-validation/'>http://bassistance.de/jquery-plugins/jquery-plugin-validation/</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>Html5shiv - <a href=' https://github.com/aFarkas/html5shiv'> https://github.com/aFarkas/html5shiv</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT and GPL2 License)</a></li>
+		<li>Jquery.v1.10.2 - <a href=' http://jquery.com/'> http://jquery.com/</a> | <a href='https://jquery.org/license/'>(License)</a></li>
+		<li>Jpreloader - <a href='http://www.inwebson.com'>http://www.inwebson.com</a> | <a href='http://www.gnu.org/licenses/old-licenses/gpl-2.0.html'>(GNU General Public License)</a></li>
+		<li>Stellar.js - <a href='http://markdalgleish.com/projects/stellar.js'>http://markdalgleish.com/projects/stellar.js</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>Tooltipster 3.0.5 - <a href='http://plugins.jquery.com/tooltipster/'>http://plugins.jquery.com/tooltipster/</a> | <a href='http://www.opensource.org/licenses/mit-license.php'>(MIT License)</a></li>
+		<li>Lightbox - <a href='http://www.lokeshdhakar.com'>http://www.lokeshdhakar.com</a> | <a href='http://creativecommons.org/licenses/by/2.5/'>(Creative Commons Attribution 2.5 License)</a></li>
+		<li>Circle Menu - <a href='https://github.com/Zikes/circle-menu'>https://github.com/Zikes/circle-menu</a></li>
+		
+	
+	</ul>
+</section>
+<!--========================== END SOURCE & CREDITS ==========================-->				
+           
+	<footer>
+		<p><strong>Once Again, Thank You Very Much For Purchasing This Theme!</strong></p>
+		<span class="header-desc">Velko Georgiev</span>
+			</footer>
+	</div>	
+	
+	</body>
+</html>
