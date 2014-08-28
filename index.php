@@ -1,6 +1,6 @@
 <?php
 
-   header( 'Location: http://rafaelvelez.us/modern' ) ;
+   header( 'Location: http://dev.rafaelvelez.us/modern' ) ;
 
 ?>
 
