@@ -9,7 +9,9 @@ $pageURL = 'http';
   $pageURL .= $_SERVER["SERVER_NAME"].dirname($_SERVER['PHP_SELF']);
  }
  
-$pageURL .="/modern/";
+$last= substr($pageURL, -1);
+if ($last == "/") $pageURL .="modern/";
+else $pageURL.="/modern/";
  
 header( 'Location: '.$pageURL ) ;
 
