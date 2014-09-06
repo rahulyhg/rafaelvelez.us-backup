@@ -1,8 +1,9 @@
 'use strict';
 
-app.controller('homeCtrl', ['$scope','loginService', function($scope,loginService){
+app.controller('homeCtrl', ['$scope','$rootScope','loginService', function($scope,$rootScope,loginService){
 	$scope.txt='Page Home';
-	$scope.logout=function(){
+        $rootScope.title="Home";
+        $scope.logout=function(){
 		loginService.logout();
-	}
-}])
+	};
+}]);
