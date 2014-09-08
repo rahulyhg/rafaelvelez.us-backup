@@ -1,4 +1,67 @@
-<div class="wrap">
-	<p>{{txt}}</p>
-	<a href="" ng-click="logout()">Logout</a>
-</div>
+<!-- HEADER START -->
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/home">Rali-Tracker</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: page == 'home'}"><a href="#/home">Home</a></li>
+                <li class="dropdown" ng-class="{active: page == 'recipes'}">
+                    <a href="#/recipes" class="dropdown-toggle" data-toggle="dropdown">Recipes <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/recipes/view">View</a></li>
+                        <li><a href="#/recipes/create">Create</a></li>
+                        <li><a href="#/recipes/change">Change</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" ng-class="{active: page == 'ingredients'}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingredients <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/ingredients/view">View</a></li>
+                        <li><a href="#/ingredients/add">Add</a></li>
+                        <li><a href="#/ingredients/change">Change</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Test</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more test</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#/profile">Profile</a></li>
+                        <li><a href="#/settings">Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="" ng-click="logout()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!-- HEADER END -->
+
+<!-- MAIN CONTENT START -->
+
+<!-- MAIN CONTENT END -->
+
+<!-- FOOTER START -->
+<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+    <div class="container">
+        <p class="navbar-text">Copyright &copy; Rali-Software 2014</p>
+    </div>
+</nav>
+<!-- FOOTER END -->

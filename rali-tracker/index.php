@@ -25,7 +25,7 @@
     
     
 </head>
-<body>
+<body ng-class="bodyClass">
   <div ng-view></div>
   <!-- Bootstrap JS -->
   <!-- <script src="lib/bootstrap/js/bootstrap.min.js"></script> -->
