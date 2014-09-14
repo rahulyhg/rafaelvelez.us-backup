@@ -17,6 +17,17 @@ app.factory('loginService',function($http, $location, sessionService){
 				}				   
 			});
 		},
+                register:function(data,scope){
+			//var $promise=$http.post('data/user.php',data); //send data to user.php
+                        var $promise=$http.post('api/v1/register',data); //send data to user.php
+			$promise.then(function(msg){
+				var resp=msg.data;
+				scope.msgtxt=resp.message;
+                                scope.newUser.name = "";
+                                scope.newUser.email = "";
+                                scope.newUser.password = "";
+			});
+		},
 		logout:function(){
 			sessionService.destroy('uid');
 			$location.path('/login');
