@@ -2,6 +2,7 @@
 
 require_once '../include/DbHandler.php';
 require_once '../include/PassHash.php';
+require_once '../include/MailHandler.php';
 require 'Slim/Slim.php';
 
 \Slim\Slim::registerAutoloader();
@@ -57,7 +58,7 @@ function authenticate(\Slim\Route $route) {
  * method - POST
  * params - name, email, password
  */
-$app->post('/register', function() use ($app) {
+$app->post('/signup', function() use ($app) {
             // check for required params
             $app = \Slim\Slim::getInstance();
             $request_params =  json_decode($app->request()->getBody(),true);
@@ -69,25 +70,34 @@ $app->post('/register', function() use ($app) {
             verifyRequiredParams(array('name', 'email', 'password'));
             $response = array();
 
-            // reading post params
-//            $name = $app->request->post('name');
-//            $email = $app->request->post('email');
-//            $password = $app->request->post('password');
-
-            // validating email address
             validateEmail($email);
 
             $db = new DbHandler();
             $res = $db->createUser($name, $email, $password);
-
             if ($res == USER_CREATED_SUCCESSFULLY) {
-                $response["error"] = false;
-                $response["message"] = "You are successfully registered, please login using the login tab";
+                $em = new MailHandler();
+                $user = $db->getUserByEmail($email);
+                $random_str=sha1($user['name'] . date('Y-m-d H:i:s') . $user['id']);
+                if (($db-> newAccountRequest($random_str,$user['id'])) && 
+                        ($em->send_pw_reset_email($user['email'], $random_str)))
+                {
+                    $response['error'] = false;
+                    $response['type'] = 'success'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
+                    $response['URL'] = BASE_URL . "/#/activate_account/" . $random_str;
+                    $response["message"] = "You are successfully registered, we sent a confirmation email with instructions to activate your account";
+                }
+                else {
+                    $response['error'] = true;
+                    $response['type'] = 'danger'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
+                    $response["message"] = "Oops! An error occurred while registering";
+                }
             } else if ($res == USER_CREATE_FAILED) {
-                $response["error"] = true;
+                $response['error'] = true;
+                $response['type'] = 'danger'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
                 $response["message"] = "Oops! An error occurred while registering";
             } else if ($res == USER_ALREADY_EXISTED) {
-                $response["error"] = true;
+                $response['error'] = true;
+                $response['type'] = 'warning'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
                 $response["message"] = "Sorry, this email already existed";
             }
             // echo json response
@@ -122,22 +132,73 @@ $app->post('/login', function() use ($app) {
                     session_start();
                     $_SESSION['uid']=uniqid('ang_');
                     $response['session'] = $_SESSION['uid'];
-                    $response["error"] = false;
+                    $response['error'] = false;
+                    $response['type'] = 'success'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
                     $response['name'] = $user['name'];
                     $response['email'] = $user['email'];
                     $response['apiKey'] = $user['api_key'];
                     $response['createdAt'] = $user['created_at'];
+                    $response['message'] = "Login Successfull";
                 } else {
                     // unknown error occurred
                     $response['error'] = true;
+                    $response['type'] = 'danger'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
                     $response['message'] = "An error occurred. Please try again";
                 }
             } else {
                 // user credentials are wrong
                 $response['error'] = true;
+                $response['type'] = 'warning'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
                 $response['message'] = 'Login failed. Incorrect credentials';
             }
 
+            echoRespnse(200, $response);
+        });
+        
+$app->post('/forgot_pw', function() use ($app) {
+            // check for required params
+            verifyRequiredParams(array('email'));
+                        
+            $app = \Slim\Slim::getInstance();
+            $request_params =  json_decode($app->request()->getBody(),true);
+            // reading post params
+            $email = $request_params['email'];
+            $response = array();
+
+            $db = new DbHandler();
+            $em = new MailHandler();
+            // get the user by email
+            $user = $db->getUserByEmail($email);
+				
+            if ($user != NULL) {
+                //Everything is looking good, lets create the email and update the database
+                $random_str=sha1($user['name'] . date('Y-m-d H:i:s') . $user['id']);
+                if (($db->pwResetPreparation($random_str,$user['id']))&&
+                        ($em->send_pw_reset_email($user['email'], $random_str))){
+                    $response['error'] = false;
+                    $response['type'] = 'success'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
+                    $response['name'] = $user['name'];
+                    $response['email'] = $user['email'];
+                    $response['apiKey'] = $user['api_key'];
+                    $full_url=BASE_URL . $random_str;
+                    $response['URL'] = BASE_URL . "/#/reset_pw/" .$random_str;
+                    $response['message'] = "User found, an email with instructions on how to reset your password will be sent soon.";
+                }
+                else {
+                    $response['error'] = true;
+                    $response['type'] = 'danger'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
+                    $response['name'] = $user['name'];
+                    $response['email'] = $user['email'];
+                    $response['apiKey'] = $user['api_key'];
+                    $response['message'] = "There was an error during the process, please contact support.";
+                    
+                }
+            } else {
+                // unknown error occurred
+                $response['error'] = true;
+                $response['type'] = 'warning'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
+                $response['message'] = "User not found, please contact support.";
+            }
             echoRespnse(200, $response);
         });
         
@@ -151,10 +212,12 @@ $app->post('/check_session', function() use ($app) {
             session_start();
             if( isset($_SESSION['uid']) ) {
                 $response['error'] = false;
+                $response['type'] = 'success'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
                 $response['message']='authentified';
             }
             else {
                 $response['error'] = true;
+                $response['type'] = 'danger'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
                 $response['message'] = 'Login failed. Incorrect credentials';
             }
             echoRespnse(200, $response);
@@ -162,6 +225,114 @@ $app->post('/check_session', function() use ($app) {
             
         });
         
+/**
+ * Check Password Request
+ * url - /check_session
+ * method - POST
+ */
+$app->post('/check_pw_request', function() use ($app) {
+            
+     // check for required params
+            $app = \Slim\Slim::getInstance();
+            $request_params =  json_decode($app->request()->getBody(),true);
+            // reading post params
+            $reset_code = $request_params['reset_code'];
+            verifyRequiredParams(array('reset_code'));
+            $response = array();
+            $db = new DbHandler();
+            if ($db->checkResetCode($reset_code)) {
+                //Everything is looking good, lets create the email and update the database
+                $response['error'] = false;
+                $response['type'] = 'success';
+                $response['message'] = "Reset Password request found, please provide the new password below.";
+            }
+            else {
+                $response['error'] = true;
+                $response['type'] = 'warning';
+                $response['message'] = "We cannot find your request, please contact support.";
+                    
+            }
+            echoRespnse(200, $response);
+            
+            
+        });
+        
+/**
+ * Check Password Request
+ * url - /check_session
+ * method - POST
+ */
+$app->post('/activate_account', function() use ($app) {
+            
+     // check for required params
+            $app = \Slim\Slim::getInstance();
+            $request_params =  json_decode($app->request()->getBody(),true);
+            // reading post params
+            $activation_code = $request_params['activation_code'];
+            verifyRequiredParams(array('activation_code'));
+            $response = array();
+            $db = new DbHandler();
+            if ($db->checkVerifyCode($activation_code)) {
+                //Everything is looking good, lets create the email and update the database
+                if ($db->activateAccount($activation_code)){
+                    $response['error'] = false;
+                    $response['type'] = 'success';
+                    $response['message'] = "Your account is been activated, please login <a href=\"#/login\">here</a>";
+                }
+                else {
+                    $response['error'] = true;
+                    $response['type'] = 'warning';
+                    $response['message'] = "We cannot activate your account, please contact support.";
+                }
+            }
+            else {
+                $response['error'] = true;
+                $response['type'] = 'warning';
+                $response['message'] = "We cannot find your request, please contact support.";
+                    
+            }
+            echoRespnse(200, $response);
+            
+            
+        }); 
+        
+       
+        /**
+ * User Registration
+ * url - /change_pw
+ * method - POST
+ * params - name, email, password
+ */
+$app->post('/change_pw', function() use ($app) {
+            // check for required params
+            $app = \Slim\Slim::getInstance();
+            $request_params =  json_decode($app->request()->getBody(),true);
+            // reading post params
+            $reset_code = $request_params['reset_code'];
+            $password = $request_params['password'];
+                
+            verifyRequiredParams(array('reset_code', 'password'));
+            $response = array();
+            $db = new DbHandler();
+                       
+            if ($db->changePassword($reset_code,$password)) {
+                //Everything is looking good, lets create the email and update the database
+                $response['error'] = false;
+                $response['type'] = 'success';
+                $response['message'] = "Reset Password request found, please provide the new password below.";
+                $db->deleteResetRequest($reset_code);
+            }
+            else {
+                $response['error'] = true;
+                $response['type'] = 'warning';
+                $response['message'] = "We cannot find your request, please contact support.";
+                    
+            }
+            
+            
+            
+            echoRespnse(200, $response);
+        });
 /**
  * User Logout
  * url - /logout
@@ -174,10 +345,51 @@ $app->post('/logout', function() use ($app) {
             session_destroy();
             session_commit();
             $response['error']=false;
+            //types are always bind to alerts: ["info", "warning", "danger", "success"]; 
+            $response['type']='success';
             $response['message'] = 'Logout successfully';
             echoRespnse(200, $response);
         });
 
+      
+/**
+ * Check Session
+ * url - /check_session
+ * method - POST
+ */
+$app->post('/reset_pw', function() use ($app) {
+            // check for required params
+            verifyRequiredParams(array('email'));
+            
+            $app = \Slim\Slim::getInstance();
+            $request_params =  json_decode($app->request()->getBody(),true);
+            // reading post params
+            $email = $request_params['email'];
+            $response = array();
+
+            $db = new DbHandler();
+            // get the user by email
+            $user = $db->getUserByEmail($email);
+				
+            if ($user != NULL) {
+                $response['error'] = false;
+                $response['type'] = 'success'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
+                $response['name'] = $user['name'];
+                $response['email'] = $user['email'];
+                $response['apiKey'] = $user['api_key'];
+                $response['message'] = "User found, an email with instructions on how to reset your password will be sent soon.";
+            } else {
+                // unknown error occurred
+                $response['error'] = true;
+                $response['type'] = 'warning'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
+                $response['message'] = "User not found, please contact support.";
+            }
+            echoRespnse(200, $response);
+            echoRespnse(201, $response);
+            
+            
+        });    
+        
 /*
  * ------------------------ METHODS WITH AUTHENTICATION ------------------------
  */

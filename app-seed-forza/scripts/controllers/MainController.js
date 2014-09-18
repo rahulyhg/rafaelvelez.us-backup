@@ -69,21 +69,6 @@ app.controller('MainController', ['$scope', '$global', '$timeout', '$location','
             });
         });
 
-        // there are better ways to do this, e.g. using a dedicated service
-        // but for the purposes of this demo this will do :P
-//        $scope.isLoggedIn = true;
-//        $scope.logOut = function () {
-//          $scope.isLoggedIn = false;
-//        };
-//        $scope.logIn = function () {
-//          $scope.isLoggedIn = true;
-//        };
-
-//        var connected = LoginService.islogged();
-//        connected.then(function(msg) {
-//            if (msg.data.error === false)
-//                $scope.isLoggedIn = true;
-//        });
         $scope.logOut = function() {
             LoginService.logout();
             $scope.isLoggedIn = false;
@@ -95,23 +80,6 @@ app.controller('MainController', ['$scope', '$global', '$timeout', '$location','
         $scope.rightbarAccordionsShowOne = false;
         $scope.rightbarAccordions = [{open: true}, {open: true}, {open: true}, {open: true}, {open: true}, {open: true}, {open: true}];
 
-//        $scope.$on('$routeChangeStart', function(e) {
-//            var routespermission = ['/'];  //route that require login
-//            if (routespermission.indexOf($location.path()) !== -1)
-//            {
-//                var connected = LoginService.islogged();
-//                connected.then(function(msg) {
-//                    if (msg.data.error === true)
-//                       $location.path('/login');
-//                    else
-//                       $scope.isLoggedIn = true; 
-//                    progressLoader.start();
-//                    progressLoader.set(50);
-//                });
-//            }
-//            // console.log('start: ', $location.path());
-//            
-//        });
         $scope.$on('$routeChangeSuccess', function(e) {
             // console.log('success: ', $location.path());
             progressLoader.end();

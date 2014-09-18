@@ -630,6 +630,9 @@
       <script src="scripts/controllers/HomeController.js"></script>
       <script src="scripts/controllers/LoginController.js"></script>
       <script src="scripts/controllers/SignupController.js"></script>
+      <script src="scripts/controllers/ForgotPwController.js"></script>
+      <script src="scripts/controllers/ResetPwController.js"></script>
+      <script src="scripts/controllers/ActivateAccController.js"></script>
       <script src="scripts/controllers/LoginService.js"></script>
       <script src="scripts/controllers/SessionService.js"></script>
       

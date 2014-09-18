@@ -62,28 +62,10 @@ app.config(['$routeProvider', function ($routeProvider) {
       .when('/', {templateUrl: 'views/index.html',controller: 'HomeController',auth: true})
       .when('/login', {templateUrl: 'views/login.html', controller: 'LoginController',auth: false})
       .when('/signup', {templateUrl: 'views/signup.html', controller: 'SignupController',auth: false})
+      .when('/forgot_pw', {templateUrl: 'views/forgot-pw.html', controller:'ForgotPwController',auth:false})
+      .when('/reset_pw/:reset_code', {templateUrl: 'views/reset-pw.html', controller:'ResetPwController',auth:false})
+      .when('/activate_account/:activation_code', {templateUrl: 'views/activate-account.html', controller:'ActivateAccController',auth:false})
       .when('/:templateFile', {templateUrl: function (param) { return 'views/'+param.templateFile+'.html' },auth: true})
       .otherwise({redirectTo: '/'});
 }]);
 
-//app.run(function($rootScope, $location, LoginService,progressLoader){
-//	var routespermission=['/'];  //route that require login
-//	
-//        $rootScope.$on('$routeChangeStart', function(){
-//            if( routespermission.indexOf($location.path()) !=-1)
-//            {
-//		var connected=LoginService.islogged();
-//		connected.then(function(msg){
-//			if(msg.data.error===true) $location.path('/login');
-//                });
-//            }
-//            // console.log('start: ', $location.path());
-//            progressLoader.start();
-//            progressLoader.set(50);
-//	}); 
-//        
-//        $rootScope.$on('$routeChangeSuccess', function (e) {
-//            // console.log('success: ', $location.path());
-//            progressLoader.end();
-//        });
-//});

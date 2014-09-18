@@ -1,0 +1,8 @@
+<div class="verticalcenter">
+    <a href="#/"><img src="assets/img/logo-big.png" alt="Logo" class="brand" /></a>
+    <div class="panel panel-primary">
+        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg | safe_html"></span></alert>
+    </div>
+    
+    
+</div>

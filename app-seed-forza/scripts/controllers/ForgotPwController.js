@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('LoginController', ['$scope','LoginService','$global','$location', function ($scope,LoginService,$global,$location) {
+app.controller('ForgotPwController', ['$scope','LoginService','$global', function ($scope,LoginService,$global) {
 	//Alerts for server responses;
         $scope.alerts = [];
         $scope.closeAlert = function(index) {
@@ -8,18 +8,17 @@ app.controller('LoginController', ['$scope','LoginService','$global','$location'
         };
         
         $scope.defUser = {
-              email: "",
-              password: ""
+              email: "rafael.velez.c@gmail.com",
         };
         
         $scope.user = $scope.defUser;
         
-        $scope.login=function(data){
-		LoginService.login(data,$scope); //call login service 
+        $scope.send=function(data){
+		LoginService.forgot(data,$scope); //call login service
 	};
+       
         
         $global.set('fullscreen', true);
-
         $scope.$on('$destroy', function () {
             $global.set('fullscreen', false);
         });

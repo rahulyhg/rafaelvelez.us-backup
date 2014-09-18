@@ -24,10 +24,10 @@
                     <div class="pull-right"><label><input type="checkbox" style="margin-bottom: 20px" checked=""> Remember Me</label></div>
                 </div>
             </form>
-            <alert ng-show="response.show" type="{{response.type}}"><span ng-bind-html="response.msg | safe_html"></span></alert>
+            <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)"><span ng-bind-html="alert.msg | safe_html"></span></alert>
         </div>
         <div class="panel-footer">
-            <a href="#/" class="pull-left btn btn-link" style="padding-left:0">Forgot password?</a>
+            <a href="#/forgot_pw" class="pull-left btn btn-link" style="padding-left:0">Forgot password?</a>
 
             <div class="pull-right">
                 <a href="#/login" class="btn btn-primary" ng-click="login(user)" ng-disabled="form1.$invalid">Log In</a>
