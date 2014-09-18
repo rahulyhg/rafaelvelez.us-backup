@@ -2,7 +2,7 @@
 /**
  * Database configuration
  */
-define('BASE_URL','http://rafaelvelez.us/app-seed-forza');
+define('BASE_URL','http://rafaelvelez.us/app-seed-forza/');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'Pl4t1num');
 define('DB_HOST', 'localhost');
