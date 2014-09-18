@@ -42,14 +42,14 @@ class MailHandler {
      * @param String $password User login password
      */
     public function send_account_act_email($to,$id) {
-        $subject = ACCOUNT_ACT_SUBJECT;
+        $subject = ACTIVATE_ACC_SUBJECT;
         $from = "rafael.velez.c@gmail.com";
         $headers = "From:" . $from . "\r\n";
         $headers .= "CC: rafael.velez.c@gmail.com\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
         $full_url=BASE_URL . $id;
-        $message = strtr (ACCOUNT_ACT_BODY, array ('{{res_link}}' => $full_url));
+        $message = strtr (ACTIVATE_ACC_BODY, array ('{{res_link}}' => $full_url));
         $resp = mail($to, $subject, $message, $headers);
         return $resp;
     }

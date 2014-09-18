@@ -15,8 +15,8 @@ define('PW_RESET_BODY', ''
         . '</table>'
         . '</body></html>');
 
-define('ACTIVATE_ACT_SUBJECT', 'Activate account request');
-define('ACTIVATE_ACT_BODY', ''
+define('ACTIVATE_ACC_SUBJECT', 'Activate account request');
+define('ACTIVATE_ACC_BODY', ''
         . '<html><body>'
         . '<img src="http://localhost/rafaelvelez.us/app-seed-forza/assets/img/logo-big.png" alt="Website Change Request" />'
         . '<table rules="all" style="border-color: #666;" cellpadding="10">'
