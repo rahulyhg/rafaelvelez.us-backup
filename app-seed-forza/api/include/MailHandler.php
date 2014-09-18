@@ -29,7 +29,7 @@ class MailHandler {
         $headers .= "CC: rafael.velez.c@gmail.com\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        $full_url=BASE_URL . $id;
+        $full_url= BASE_URL . "/#/reset_pw/" . $id;
         $message = strtr (PW_RESET_BODY, array ('{{res_link}}' => $full_url));
         $resp = mail($to, $subject, $message, $headers);
         return $resp;
@@ -48,7 +48,7 @@ class MailHandler {
         $headers .= "CC: rafael.velez.c@gmail.com\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-        $full_url=BASE_URL . $id;
+        $full_url= BASE_URL . "/#/activate_account/" . $id;
         $message = strtr (ACTIVATE_ACC_BODY, array ('{{res_link}}' => $full_url));
         $resp = mail($to, $subject, $message, $headers);
         return $resp;
