@@ -339,7 +339,7 @@ class DbHandler {
             $stmt->store_result();
             if ($stmt->num_rows > 0) {
                 // $user = $stmt->get_result()->fetch_assoc();
-                $stmt->bind_result($id);
+                $stmt-> bind_result($id);
                 $stmt->fetch();
                 $stmt->close();
                 return $id;

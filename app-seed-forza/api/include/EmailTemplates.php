@@ -8,10 +8,19 @@
 
 define('PW_RESET_SUBJECT', 'Reset your password request');
 define('PW_RESET_BODY', ''
-        . '<html>'
-        . '<body>'
-        . '<h3>Please visit this link to reset your password:<h3>'
-        . '<a href="{{res_link}}">Click Here</a>'
-        . '</body>'
-        . '</html>');
+        . '<html><body>'
+        . '<img src="http://localhost/rafaelvelez.us/app-seed-forza/assets/img/logo-big.png" alt="Website Change Request" />'
+        . '<table rules="all" style="border-color: #666;" cellpadding="10">'
+        . "<tr style='background: #eee;'><td><strong>Click here to change your password:</strong> </td><td>{{res_link}}</td></tr>"
+        . '</table>'
+        . '</body></html>');
+
+define('ACTIVATE_ACC_SUBJECT', 'Activate account request');
+define('ACTIVATE_ACC_BODY', ''
+        . '<html><body>'
+        . '<img src="http://localhost/rafaelvelez.us/app-seed-forza/assets/img/logo-big.png" alt="Website Change Request" />'
+        . '<table rules="all" style="border-color: #666;" cellpadding="10">'
+        . "<tr style='background: #eee;'><td><strong>Click here to activate your account:</strong> </td><td>{{res_link}}</td></tr>"
+        . '</table>'
+        . '</body></html>');
 

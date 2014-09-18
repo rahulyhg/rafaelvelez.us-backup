@@ -79,7 +79,7 @@ $app->post('/signup', function() use ($app) {
                 $user = $db->getUserByEmail($email);
                 $random_str=sha1($user['name'] . date('Y-m-d H:i:s') . $user['id']);
                 if (($db-> newAccountRequest($random_str,$user['id'])) && 
-                        ($em->send_pw_reset_email($user['email'], $random_str)))
+                        ($em->send_account_act_email($user['email'], $random_str)))
                 {
                     $response['error'] = false;
                     $response['type'] = 'success'; //types are always bind to alerts: ["info", "warning", "danger", "success"];
