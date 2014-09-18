@@ -1,0 +1,7 @@
+********************************************************
+09/18/2014
+
+-Fix emails
+-Fix send email locally
+-Work on Body
+-Create Template
