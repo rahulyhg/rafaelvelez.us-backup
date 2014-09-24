@@ -2,6 +2,7 @@
 09/18/2014
 
 -Fix emails (Completed, need polishing when everything gets done)
--Fix send email locally
+-Fix hostname issue in Config.php (backend - Completed)
+-Fix send email locally (No solution)
 -Work on Body
 -Create Template

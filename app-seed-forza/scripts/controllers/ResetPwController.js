@@ -1,7 +1,8 @@
 'use strict';
 
 app.controller('ResetPwController', ['$scope','LoginService','$global','$routeParams','$filter', function ($scope,LoginService,$global,$routeParams, $filter) {
-	//First check if a request exists, if not redirect
+	$global.set('title',"Reset Password");
+        //First check if a request exists, if not redirect
         $scope.validRequest = false; 
         var valid_req = LoginService.isValidPwReq($routeParams.reset_code);
                 valid_req.then(function(msg) {

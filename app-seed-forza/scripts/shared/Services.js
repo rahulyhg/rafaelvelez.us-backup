@@ -5,15 +5,18 @@ angular
   .service('$global', ['$rootScope', 'EnquireService', '$document', function ($rootScope, EnquireService, $document) {
     this.settings = {
       fixedHeader: true,
-      headerBarHidden: true,
+      //headerBarHidden: true,
       leftbarCollapsed: false,
       leftbarShown: false,
       rightbarCollapsed: false,
       fullscreen: false,
-      layoutHorizontal: false,
-      layoutHorizontalLargeIcons: false,
+      //layoutHorizontal: false,
+      //layoutHorizontalLargeIcons: false,
       layoutBoxed: false,
-      showSearchCollapsed: false
+      showSearchCollapsed: false,
+      title: "",
+      name_user: "",
+      avatar: ""
     };
 
     var brandColors = {

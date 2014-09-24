@@ -1,7 +1,8 @@
 'use strict';
 
 app.controller('ForgotPwController', ['$scope','LoginService','$global', function ($scope,LoginService,$global) {
-	//Alerts for server responses;
+	$global.set('title',"Forgot Password");
+        //Alerts for server responses;
         $scope.alerts = [];
         $scope.closeAlert = function(index) {
             $scope.alerts.splice(index, 1);

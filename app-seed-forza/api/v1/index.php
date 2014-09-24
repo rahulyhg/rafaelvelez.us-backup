@@ -137,6 +137,7 @@ $app->post('/login', function() use ($app) {
                     $response['name'] = $user['name'];
                     $response['email'] = $user['email'];
                     $response['apiKey'] = $user['api_key'];
+                    $response['avatar'] = $user['avatar'];
                     $response['createdAt'] = $user['created_at'];
                     $response['message'] = "Login Successfull";
                 } else {

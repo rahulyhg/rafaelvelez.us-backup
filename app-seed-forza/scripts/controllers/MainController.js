@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainController', ['$scope', '$global', '$timeout', '$location','progressLoader', 'LoginService', function($scope, $global, $timeout,$location,progressLoader, LoginService) {
+app.controller('MainController', ['$scope', '$global', '$timeout', '$location','progressLoader', 'LoginService','SessionService', function($scope, $global, $timeout,$location,progressLoader, LoginService, SessionService) {
         $scope.$on('$routeChangeStart', function(event,next,current) {
             
             if (next.auth)
@@ -10,7 +10,10 @@ app.controller('MainController', ['$scope', '$global', '$timeout', '$location','
                     if (msg.data.error === true)
                        $location.path('/login');
                     else
-                       $scope.isLoggedIn = true; 
+                        $scope.isLoggedIn = true;
+                        $global.set('name_user',SessionService.get('name'));
+                        $global.set('avatar',SessionService.get('avatar'));
+                       
                 });
             }
             // console.log('start: ', $location.path());
@@ -20,9 +23,11 @@ app.controller('MainController', ['$scope', '$global', '$timeout', '$location','
         });
         
         
-        
+        $scope.style_title = $global.get('title');
+        $scope.style_name_user = $global.get('name_user');
+        $scope.style_avatar = $global.get('avatar');
         $scope.style_fixedHeader = $global.get('fixedHeader');
-        $scope.style_headerBarHidden = $global.get('headerBarHidden');
+        //$scope.style_headerBarHidden = $global.get('headerBarHidden');
         $scope.style_layoutBoxed = $global.get('layoutBoxed');
         $scope.style_fullscreen = $global.get('fullscreen');
         $scope.style_leftbarCollapsed = $global.get('leftbarCollapsed');
@@ -35,14 +40,14 @@ app.controller('MainController', ['$scope', '$global', '$timeout', '$location','
             $global.set('showSearchCollapsed', false);
         };
 
-        $scope.hideHeaderBar = function() {
-            $global.set('headerBarHidden', true);
-        };
+        //$scope.hideHeaderBar = function() {
+        //    $global.set('headerBarHidden', true);
+        //};
 
-        $scope.showHeaderBar = function($event) {
-            $event.stopPropagation();
-            $global.set('headerBarHidden', false);
-        };
+        //$scope.showHeaderBar = function($event) {
+        //    $event.stopPropagation();
+        //    $global.set('headerBarHidden', false);
+        //};
 
         $scope.toggleLeftBar = function() {
             if ($scope.style_isSmallScreen) {
@@ -57,6 +62,7 @@ app.controller('MainController', ['$scope', '$global', '$timeout', '$location','
 
         $scope.$on('globalStyles:changed', function(event, newVal) {
             $scope['style_' + newVal.key] = newVal.value;
+            $scope['info_' + newVal.key] = newVal.value;
         });
         $scope.$on('globalStyles:maxWidth767', function(event, newVal) {
             $timeout(function() {

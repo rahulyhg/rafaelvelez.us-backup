@@ -1,7 +1,8 @@
 'use strict';
 
 app.controller('LoginController', ['$scope','LoginService','$global','$location', function ($scope,LoginService,$global,$location) {
-	//Alerts for server responses;
+	$global.set('title',"Login");
+        //Alerts for server responses;
         $scope.alerts = [];
         $scope.closeAlert = function(index) {
             $scope.alerts.splice(index, 1);

@@ -21,6 +21,7 @@ app.factory('LoginService',function($http, $location, SessionService){
                                     SessionService.set('name',msg.data.name);
                                     SessionService.set('email',msg.data.email);
                                     SessionService.set('apiKey',msg.data.apiKey);
+                                    SessionService.set('avatar',msg.data.avatar);
                                     $location.path('/');
 				}	       
 				else  {

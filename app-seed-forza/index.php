@@ -7,14 +7,16 @@
  */
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" 
+      ng-app="themesApp"
+      ng-controller="MainController">
 <head>
   <meta charset="utf-8">
-  <title>Forza</title>
+  <title>{{info_title}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Forza">
-  <meta name="author" content="Ndevr Studios & The Red Team">
+  <meta name="description" content="Rali-Software Time Saver App">
+  <meta name="author" content="Rali-Software">
 
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -125,8 +127,7 @@
 </head>
 
 <body class=""
-  ng-app="themesApp"
-  ng-controller="MainController"
+  
   ng-class="{
               'static-header': !style_fixedHeader,
               'focusedform': style_fullscreen,
@@ -136,10 +137,10 @@
               'show-rightbar': style_rightbarCollapsed,
               'show-leftbar': style_leftbarShown
             }"
-  ng-click="hideSearchBar();hideHeaderBar();"
+  ng-click="hideSearchBar();//hideHeaderBar();"
   ng-cloak
 >
-
+    <!--
     <div id="headerbar" ng-class="{topNegative1000: style_headerBarHidden, topZero: !style_headerBarHidden}">
         <div class="container">
             <div class="row">
@@ -211,37 +212,39 @@
             </div>
         </div>
     </div>
+    -->
 
     <header class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': style_fixedHeader, 'navbar-static-top': !style_fixedHeader}" role="banner">
         <a id="leftmenu-trigger" tooltip-placement="right" tooltip="Toggle Sidebar" ng-click="toggleLeftBar()"></a>
         <a id="rightmenu-trigger" tooltip-placement="left" tooltip="Toggle Infobar" ng-click="toggleRightBar()"></a>
 
         <div class="navbar-header pull-left">
-            <a class="navbar-brand" href="#/">Forza</a>
+            <a class="navbar-brand" href="#/">Rali</a>
         </div>
 
         <ul class="nav navbar-nav pull-right toolbar">
           <li class="dropdown" ng-show="!isLoggedIn">
-            <a href="#/extras-login2" style="font-size: 14px"><i class="fa fa-sign-in"></i> Log in</a>
+            <a href="#/login" style="font-size: 14px"><i class="fa fa-sign-in"></i> Log in</a>
           </li>
           <li class="dropdown" ng-show="isLoggedIn">
-            <a href="#" class="dropdown-toggle username"><span class="hidden-xs">Matt Smith</span><img src="assets/demo/avatar/dangerfield.png" alt="Dangerfield" /></a>
+            <a href="#" class="dropdown-toggle username"><span class="hidden-xs">{{info_name_user}}</span><img ng-src="assets/img/avatar/{{info_avatar}}" alt="{{info_name_user}}" /></a>
             <ul class="dropdown-menu userinfo arrow">
               <li class="userlinks">
                 <ul class="dropdown-menu">
-                  <li><a href="#">Edit Profile <i class="pull-right fa fa-fw fa-pencil"></i></a></li>
+                 <!-- <li><a href="#">Edit Profile <i class="pull-right fa fa-fw fa-pencil"></i></a></li>
                   <li><a href="#">Account <i class="pull-right fa fa-fw fa-user"></i></a></li>
                   <li><a href="#">Settings <i class="pull-right fa fa-fw fa-cog"></i></a></li>
                   <li class="divider"></li>
                   <li><a href="#">Earnings <i class="pull-right fa fa-fw fa-dollar"></i></a></li>
                   <li><a href="#">Statement <i class="pull-right fa fa-fw fa-bars"></i></a></li>
                   <li><a href="#">Withdrawals <i class="pull-right fa fa-fw fa-credit-card"></i></a></li>
-                  <li class="divider"></li>
+                  <li class="divider"></li> -->
                   <li><a href="" class="text-right" ng-click="logOut()">Sign Out</a></li>
                 </ul>
               </li>
             </ul>
           </li>
+          <!--
           <li class="dropdown" ng-controller="MessagesController" ng-show="isLoggedIn"
             data-bootstro
             data-bootstro-step="2"
@@ -349,8 +352,10 @@
                 <link rel="stylesheet" type="text/css" ng-href="assets/demo/variations/{{headerStylesheet}}">
                 <link rel="stylesheet" type="text/css" ng-href="assets/demo/variations/{{sidebarStylesheet}}">
             </li>
+          -->
     </ul>
     </header>
+    <!--
     <nav class="navbar navbar-default ng-hide" role="navigation" ng-show="style_layoutHorizontal">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -367,6 +372,7 @@
             </ul>
         </div>
     </nav>
+    -->
     <div id="page-container" class="clearfix">
 
         <!-- BEGIN SIDEBAR -->

@@ -126,20 +126,21 @@ class DbHandler {
      * @param String $email User email id
      */
     public function getUserByEmail($email) {
-        $stmt = $this->conn->prepare("SELECT id,name, email, api_key, user_status, created_at FROM users WHERE email = ?");
+        $stmt = $this->conn->prepare("SELECT id,name, email, api_key, avatar, user_status, created_at FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         if ($stmt->execute()) {
             /* store result */
             $stmt->store_result();
             if ($stmt->num_rows > 0) {
                 // $user = $stmt->get_result()->fetch_assoc();
-                $stmt->bind_result($id, $name, $email, $api_key, $status, $created_at);
+                $stmt->bind_result($id, $name, $email, $api_key, $avatar, $status, $created_at);
                 $stmt->fetch();
                 $user = array();
                 $user['id'] = $id;
                 $user['name'] = $name;
                 $user['email'] = $email;
                 $user['api_key'] = $api_key;
+                $user['avatar'] = $avatar;
                 $user['user_status'] = $status;
                 $user['created_at'] = $created_at;
                 $stmt->close();
