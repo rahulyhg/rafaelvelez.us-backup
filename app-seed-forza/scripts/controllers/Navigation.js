@@ -26,11 +26,11 @@ angular
                     children: [
                         {
                             label: 'View',
-                            url: 'ingredient-view'
+                            url: '#/ingredient-view'
                         },
                         {
                             label: 'Add',
-                            url: 'ingredient-add'
+                            url: '#/ingredient-add'
                         }
                         
                     ]

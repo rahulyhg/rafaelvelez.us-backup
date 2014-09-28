@@ -1,7 +1,6 @@
 		<div id="page-heading">
-			<ol class="breadcrumb">
-				<li><a href="#/">Dashboard</a></li>
-				<li>Extras</li>
+			<ol class="breadcrumb"  ng-controller="NavigationController">
+				<li ng-repeat="item in selectedItems.slice().reverse()">{{item.label}}</li>
 			</ol>
 
 			<h1>Blank</h1>

@@ -137,7 +137,6 @@
               'show-rightbar': style_rightbarCollapsed,
               'show-leftbar': style_leftbarShown
             }"
-  ng-click="hideSearchBar();//hideHeaderBar();"
   ng-cloak
 >
     <!--
@@ -216,7 +215,7 @@
 
     <header class="navbar navbar-inverse" ng-class="{'navbar-fixed-top': style_fixedHeader, 'navbar-static-top': !style_fixedHeader}" role="banner">
         <a id="leftmenu-trigger" tooltip-placement="right" tooltip="Toggle Sidebar" ng-click="toggleLeftBar()"></a>
-        <a id="rightmenu-trigger" tooltip-placement="left" tooltip="Toggle Infobar" ng-click="toggleRightBar()"></a>
+        <!-- <a id="rightmenu-trigger" tooltip-placement="left" tooltip="Toggle Infobar" ng-click="toggleRightBar()"></a> -->
 
         <div class="navbar-header pull-left">
             <a class="navbar-brand" href="#/">Rali</a>
@@ -407,7 +406,9 @@
             <!-- END SIDEBAR MENU -->
         </nav>
 
+        
         <!-- BEGIN RIGHTBAR -->
+        <!--
         <div id="page-rightbar" sticky-scroll="40" rightbar-right-position="style_layoutBoxed" style="">
           <div jscrollpane="{autoReinitialise:true, autoReinitialiseDelay: 100}" style="height: 100%;padding-bottom:40px">
               <accordion close-others="rightbarAccordionsShowOne">
@@ -497,7 +498,8 @@
 
               </accordion>
         </div>
-      </div>
+      </div> 
+      -->
       <!-- END RIGHTBAR -->
     <div id="page-content" class="clearfix" fit-height>
         <div id="wrap" ng-view="" class="mainview-animation">
@@ -507,7 +509,7 @@
     <footer role="contentinfo">
         <div class="clearfix">
             <ul class="list-unstyled list-inline pull-left">
-                <li>FORZA &copy; 2014</li>
+                <li>RALI &copy; 2014</li>
             </ul>
             <button class="pull-right btn btn-default btn-xs hidden-print" back-to-top style="padding: 1px 10px;"><i class="fa fa-angle-up"></i></button>
         </div>
