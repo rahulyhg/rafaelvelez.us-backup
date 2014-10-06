@@ -15,7 +15,7 @@ angular
             children: [
                 {
                     label: 'View',
-                    url: '#/recipe-view'
+                    url: '#/recipe_view'
                 },
                 {
                     label: 'Add',

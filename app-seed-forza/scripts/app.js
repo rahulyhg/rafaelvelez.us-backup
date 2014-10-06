@@ -1,4 +1,5 @@
 'use strict';
+
 var app= angular.module('themesApp', [
     'easypiechart',
     'toggle-switch',
@@ -53,7 +54,8 @@ var app= angular.module('themesApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'filters',
 ]);
 
 
@@ -65,7 +67,11 @@ app.config(['$routeProvider', function ($routeProvider) {
       .when('/forgot_pw', {templateUrl: 'views/forgot-pw.html', controller:'ForgotPwController',auth:false})
       .when('/reset_pw/:reset_code', {templateUrl: 'views/reset-pw.html', controller:'ResetPwController',auth:false})
       .when('/activate_account/:activation_code', {templateUrl: 'views/activate-account.html', controller:'ActivateAccController',auth:false})
+      .when('/recipe_view/:recipe_id', {templateUrl: 'views/recipe-view.html', controller:'RecipeController',auth:true})
+      .when('/recipe_view', {templateUrl: 'views/recipe-view.html', controller:'RecipeController',auth:true})
       .when('/:templateFile', {templateUrl: function (param) { return 'views/'+param.templateFile+'.html' },auth: true})
       .otherwise({redirectTo: '/'});
 }]);
+
+
 

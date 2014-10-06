@@ -25,7 +25,7 @@ app.controller('MainController', ['$scope', '$global', '$timeout', '$location','
         
         $scope.style_title = $global.get('title');
         $scope.style_name_user = $global.get('name_user');
-        $scope.style_avatar = $global.get('avatar');
+        $scope.style_avatar = $global.get('avatar') || "default-avatar.gif";
         $scope.style_fixedHeader = $global.get('fixedHeader');
         //$scope.style_headerBarHidden = $global.get('headerBarHidden');
         $scope.style_layoutBoxed = $global.get('layoutBoxed');

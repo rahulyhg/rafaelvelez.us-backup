@@ -594,6 +594,7 @@
       <!-- build:js({.tmp,app}) scripts/scripts.js -->
       <script src="scripts/shared/Services.js"></script>
       <script src="scripts/shared/Directives.js"></script>
+      <script src="scripts/shared/Utils.js"></script>
       <script src="scripts/maps/VectorMaps.js"></script>
       <script src="scripts/maps/GoogleMaps.js"></script>
       <script src="scripts/calendar/Calendar.js"></script>
@@ -641,8 +642,10 @@
       <script src="scripts/controllers/ForgotPwController.js"></script>
       <script src="scripts/controllers/ResetPwController.js"></script>
       <script src="scripts/controllers/ActivateAccController.js"></script>
+      <script src="scripts/controllers/RecipeController.js"></script>
       <script src="scripts/controllers/LoginService.js"></script>
       <script src="scripts/controllers/SessionService.js"></script>
+      <script src="scripts/controllers/DataService.js"></script>
       
       <!-- endbuild -->
 

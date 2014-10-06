@@ -9,8 +9,8 @@ app.controller('LoginController', ['$scope','LoginService','$global','$location'
         };
         
         $scope.defUser = {
-              email: "",
-              password: ""
+              email: "rafael.velez.c@gmail.com",
+              password: "Pl4t1num"
         };
         
         $scope.user = $scope.defUser;

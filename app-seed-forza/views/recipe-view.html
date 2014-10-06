@@ -1,51 +1,62 @@
-		<div id="page-heading">
-			<ol class="breadcrumb"  ng-controller="NavigationController">
-				<li ng-repeat="item in selectedItems.slice().reverse()">{{item.label}}</li>
-			</ol>
+<div id="page-heading">
+    <ol class="breadcrumb"  ng-controller="NavigationController">
+        <li ng-repeat="item in selectedItems.slice().reverse()">{{item.label}}</li>
+    </ol>
+    <h1>View Recipes</h1>
+</div>
 
-			<h1>Blank</h1>
-			<div class="options">
-                <div class="btn-toolbar">
-                    <div class="btn-group" dropdown>
-                        <button type="button" class="btn btn-default dropdown-toggle">
-                            Export as <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
-                        </ul>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4>My Recipes</h4>
+                    <div class="options">
+
                     </div>
-                    <a href="#" class="btn btn-default hidden-xs"><i class="fa fa-cog"></i></a>
+                </div>
+                <div class="panel-body">
+                    <!-- INSERT MAIN BODY CODE HERE -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form action="" class="form-horizontal row-border">
+                                <div class="form-group">
+                                    <div class="input-icon right mb10 col-md-4">
+                                        <i class="fa fa-search"></i>
+                                        <input type="text" ng-model="searchTerm" class="form-control" placeholder="Filter my recipes">
+                                    </div>
+
+                                    <label class="col-sm-1 control-label">By</label>
+                                    <div class="col-sm-4">
+                                        <input ui-select2="searchByOptions" ng-model="searchBy" style="width:100%"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div ng-repeat="recipe in recipes| searchRecipe:searchTerm:searchBy">
+                            <div class="col-sm-4">
+                                <panel panel-class="panel-green" heading="{{ recipe.name }}">
+                                    <img ng-src="{{ recipe.pic || 'assets/img/recipes/'+getRandomPic($index)}}" alt="{{ recipe.name }}" width="150"> 
+                                    <p ng-repeat="ingredient in recipe.ingredients">
+                                        {{ ingredient.ingredient || 'empty' }}
+                                    </p>
+                                    <p> {{ recipe.preparation}}</p>
+                                    <p>Mealtime: {{ recipe.mealtime}}</p>
+                                    <p>Tracking Points: {{ recipe.points || 'empty' }}</p>
+                                </panel>
+                            </div>
+                            <div ng-class="{clearfix:$index % 3==2}"></div>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- MAIN BODY CODE END HERE -->
                 </div>
             </div>
-		</div>
-		<div class="container">
+        </div>
+    </div>
+</div> <!-- container -->
 
-
-
-			<div class="row">
-				<div class="col-md-12">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<h4>Heading</h4>
-							<div class="options">
-						
-							</div>
-						</div>
-						<div class="panel-body">
-							Body
-						</div>
-					</div>
-				</div>
-			</div>
-
-
-
-			
-
-
-
-		</div> <!-- container -->

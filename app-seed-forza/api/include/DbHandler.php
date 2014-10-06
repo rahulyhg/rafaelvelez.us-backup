@@ -126,14 +126,14 @@ class DbHandler {
      * @param String $email User email id
      */
     public function getUserByEmail($email) {
-        $stmt = $this->conn->prepare("SELECT id,name, email, api_key, avatar, user_status, created_at FROM users WHERE email = ?");
+        $stmt = $this->conn->prepare("SELECT id,name, email, api_key, avatar, user_status FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         if ($stmt->execute()) {
             /* store result */
             $stmt->store_result();
             if ($stmt->num_rows > 0) {
                 // $user = $stmt->get_result()->fetch_assoc();
-                $stmt->bind_result($id, $name, $email, $api_key, $avatar, $status, $created_at);
+                $stmt->bind_result($id, $name, $email, $api_key, $avatar, $status);
                 $stmt->fetch();
                 $user = array();
                 $user['id'] = $id;
@@ -142,7 +142,6 @@ class DbHandler {
                 $user['api_key'] = $api_key;
                 $user['avatar'] = $avatar;
                 $user['user_status'] = $status;
-                $user['created_at'] = $created_at;
                 $stmt->close();
                 return $user;
             }
@@ -216,7 +215,7 @@ class DbHandler {
         if ($this->getApiKeyById($user_id)) {
 
             // insert query
-            $stmt = $this->conn->prepare("INSERT INTO reset_pw(user_id, uniq_hash) values(?, ?) ON DUPLICATE KEY UPDATE uniq_hash=?");
+            $stmt = $this->conn->prepare("INSERT INTO reset_pw(users_id, uniq_hash) values(?, ?) ON DUPLICATE KEY UPDATE uniq_hash=?");
             $stmt->bind_param("iss", $user_id, $uniq_hash, $uniq_hash);
 
             $result = $stmt->execute();
@@ -252,7 +251,7 @@ class DbHandler {
         if ($this->getApiKeyById($user_id)) {
 
             // insert query
-            $stmt = $this->conn->prepare("INSERT INTO activate_user(user_id, uniq_hash) values(?, ?) ON DUPLICATE KEY UPDATE uniq_hash=?");
+            $stmt = $this->conn->prepare("INSERT INTO activate_user(users_id, uniq_hash) values(?, ?) ON DUPLICATE KEY UPDATE uniq_hash=?");
             $stmt->bind_param("iss", $user_id, $uniq_hash, $uniq_hash);
 
             $result = $stmt->execute();
@@ -340,7 +339,7 @@ class DbHandler {
             $stmt->store_result();
             if ($stmt->num_rows > 0) {
                 // $user = $stmt->get_result()->fetch_assoc();
-                $stmt-> bind_result($id);
+                $stmt->bind_result($id);
                 $stmt->fetch();
                 $stmt->close();
                 return $id;
@@ -449,14 +448,14 @@ class DbHandler {
      * @param String $email User email id
      */
     public function getUserById($id) {
-        $stmt = $this->conn->prepare("SELECT id,name, email, api_key, user_status, created_at FROM users WHERE id = ?");
+        $stmt = $this->conn->prepare("SELECT id,name, email, api_key, user_status FROM users WHERE id = ?");
         $stmt->bind_param("i", $id);
         if ($stmt->execute()) {
             /* store result */
             $stmt->store_result();
             if ($stmt->num_rows > 0) {
                 // $user = $stmt->get_result()->fetch_assoc();
-                $stmt->bind_result($id, $name, $email, $api_key, $status, $created_at);
+                $stmt->bind_result($id, $name, $email, $api_key, $status);
                 $stmt->fetch();
                 $user = array();
                 $user['id'] = $id;
@@ -464,10 +463,63 @@ class DbHandler {
                 $user['email'] = $email;
                 $user['api_key'] = $api_key;
                 $user['user_status'] = $status;
-                $user['created_at'] = $created_at;
                 $stmt->close();
                 return $user;
             }
+        }
+        return NULL;
+    }
+
+    /**
+     * Fetching single profile
+     * @param String $task_id id of the task
+     */
+    public function getRecipe($user_id) {
+        $stmt = $this->conn->prepare("  SELECT		recipes.id,
+                                                                recipes.recipe,
+                                                                recipes.points,	
+                                                                recipes.time,
+                                                                recipes.pic,
+                                                                recipes.preparation,
+                                                                recipes.notes,
+                                                                ingredients.id,
+                                                                ingredients.ingredient,
+                                                                ingredients.department,
+                                                                ingredients.islenumber
+                                        FROM		recipes,
+                                                                ingredients,
+                                                                recipes_has_ingredients,
+                                                                users_has_recipes
+                                        WHERE		recipes.id = recipes_has_ingredients.recipes_id AND
+                                                                ingredients.id = recipes_has_ingredients.ingredients_id AND 
+                                                                users_has_recipes.recipes_id = recipes.id AND 
+                                                                users_has_recipes.users_id = ?
+                                        ORDER BY	recipes.recipe,
+                                                                ingredients.ingredient");
+        $stmt->bind_param("i", $user_id);
+        if ($stmt->execute()) {
+            $res = array();
+            $ingredients = array();
+            $stmt->bind_result($id, $recipe,$points,$time,$pic,$preparation,$notes,$ingredient_id,$ingredient,$department,$islenumber);
+            while ($stmt->fetch()) {
+                $res[$id]['id'] = $id;
+                $res[$id]['name'] = $recipe;
+                $res[$id]['points'] = $points;
+                $res[$id]['mealtime'] = $time;
+                $res[$id]['pic'] = $pic;
+                $res[$id]['preparation'] = $preparation;
+                $res[$id]['notes'] = $notes;
+                $tmpStr = $ingredient . ",";
+                if (isset($res[$id]['ingredients_str']))
+                    $tmpStr = $res[$id]['ingredients_str'] . $tmpStr; //Concat if exist    
+                $res[$id]['ingredients_str'] = $tmpStr;
+                $res[$id]['ingredients'][$ingredient_id]['id'] = $ingredient_id;
+                $res[$id]['ingredients'][$ingredient_id]['ingredient'] = $ingredient;
+                $res[$id]['ingredients'][$ingredient_id]['department'] = $department;
+                $res[$id]['ingredients'][$ingredient_id]['islenumber'] = $islenumber;
+            }
+            $stmt->close();
+            return array_values($res);
         }
         return NULL;
     }

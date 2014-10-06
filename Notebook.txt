@@ -4,5 +4,20 @@
 -Fix emails (Completed, need polishing when everything gets done)
 -Fix hostname issue in Config.php (backend - Completed)
 -Fix send email locally (Completed)
--Work on Body
+-Work on Body (Completed)
 -Create Template
+-Fix going directly to home not redirecting
+-Add form prefilled for testing
+-Add enter to login form
+-Clean Code
+-Upload another Projects to GitHub
+
+********************************************************
+10/01/2014
+-Create Boiler plate for WebApp
+-Fix going directly to home not redirecting
+-Add form prefilled for testing
+-Add enter to login form
+-Clean Code
+-Upload another Projects to GitHub
+-Fix Sending Password unprotected
