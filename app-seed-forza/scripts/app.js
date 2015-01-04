@@ -56,6 +56,7 @@ var app= angular.module('themesApp', [
     'ngRoute',
     'ngAnimate',
     'filters',
+    'angular-md5'
 ]);
 
 

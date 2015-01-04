@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('LoginController', ['$scope','LoginService','$global','$location', function ($scope,LoginService,$global,$location) {
+app.controller('LoginController', ['$scope','LoginService','$global','$location','md5', function ($scope,LoginService,$global,$location,md5) {
 	$global.set('title',"Login");
         //Alerts for server responses;
         $scope.alerts = [];

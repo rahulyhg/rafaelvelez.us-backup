@@ -12,7 +12,7 @@
       ng-controller="MainController">
 <head>
   <meta charset="utf-8">
-  <title>{{info_title}}</title>
+  <title>{{info_title || 'Rali'}}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rali-Software Time Saver App">
@@ -226,7 +226,7 @@
             <a href="#/login" style="font-size: 14px"><i class="fa fa-sign-in"></i> Log in</a>
           </li>
           <li class="dropdown" ng-show="isLoggedIn">
-            <a href="#" class="dropdown-toggle username"><span class="hidden-xs">{{info_name_user}}</span><img ng-src="assets/img/avatar/{{info_avatar}}" alt="{{info_name_user}}" /></a>
+            <a href="#" class="dropdown-toggle username"><span class="hidden-xs">{{info_name_user || 'User'}}</span><img ng-src="assets/img/avatar/{{info_avatar || 'default-avatar.gif'}}" alt="{{info_name_user || 'User'}}" /></a>
             <ul class="dropdown-menu userinfo arrow">
               <li class="userlinks">
                 <ul class="dropdown-menu">
@@ -595,6 +595,7 @@
       <script src="scripts/shared/Services.js"></script>
       <script src="scripts/shared/Directives.js"></script>
       <script src="scripts/shared/Utils.js"></script>
+      <script src="scripts/shared/angular-md5.js" type="text/javascript"></script>
       <script src="scripts/maps/VectorMaps.js"></script>
       <script src="scripts/maps/GoogleMaps.js"></script>
       <script src="scripts/calendar/Calendar.js"></script>

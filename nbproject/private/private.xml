@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/views/recipe-view.html</file>
             <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/index.php</file>
-            <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/views/index.html</file>
-            <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/scripts/controllers/Navigation.js</file>
-            <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/views/templates/nav_renderer.html</file>
-            <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/scripts/controllers/MainController.js</file>
+            <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/scripts/controllers/LoginController.js</file>
+            <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/scripts/shared/angular-md5.js</file>
+            <file>file:/C:/xampp2/htdocs/rafaelvelez.us/app-seed-forza/scripts/app.js</file>
         </group>
     </open-files>
 </project-private>
